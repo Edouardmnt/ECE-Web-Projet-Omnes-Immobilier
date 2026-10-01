@@ -121,10 +121,10 @@ CREATE TABLE IF NOT EXISTS `agent` (
 --
 
 INSERT INTO `agent` (`id_agent`, `photo`, `bureau`, `numero_tel`, `courriel`, `specialite`, `video`, `cv`, `honoraire`, `mot_de_passe`, `nom`, `prenom`) VALUES
-(1, 'Edouard.jpg', '0130137520', '0622674528', 'Edouard.menut@omnesimmobilier.fr', 'residentiel', 'videoedouard.mp4', 'cvedouard.jpg', 26.80, 'Edoudou92', 'Menut', 'Edouard'),
-(2, 'chloe.jpg', '0130137521', '0614677383', 'Chloe.lestic@omnesimmobilier.fr', 'commercial', 'videochloe.mp4', 'cvchloe.jpg', 26.80, 'Cloclo78', 'Lestic', 'Chloe'),
-(3, 'alice.jpg', '0130137522', '0783456782', 'Alice.coudert@omnesimmobilier.fr', 'Location', 'videoalice.mp4', 'cvalice.jpg', 26.80, 'Alice13', 'Coudert', 'Alice'),
-(4, 'victor.jpg', '0130137523', '0767548202', 'Victor.laine@omnesimmobilier.fr', 'Terrain', 'videovictor.mp4', 'cvvictor.jpg', 26.80, 'Victor16', 'Laine', 'Victor'),
+(1, 'agent1.jpg', '0130137520', '0623456701', 'Agent1@omnesimmobilier.fr', 'residentiel', 'video1.mp4', 'cv1.jpg', 26.80, 'Password1', 'Bernard', 'Lucas'),
+(2, 'agent2.jpg', '0130137521', '0623456702', 'Agent2@omnesimmobilier.fr', 'commercial', 'video2.mp4', 'cv2.jpg', 26.80, 'Password2', 'Morel', 'Sophie'),
+(3, 'agent3.jpg', '0130137522', '0623456703', 'Agent3@omnesimmobilier.fr', 'Location', 'video3.mp4', 'cv3.jpg', 26.80, 'Password3', 'Faure', 'Julie'),
+(4, 'agent4.jpg', '0130137523', '0623456704', 'Agent4@omnesimmobilier.fr', 'Terrain', 'video4.mp4', 'cv4.jpg', 26.80, 'Password4', 'Rey', 'Thomas'),
 (5, 'agent5.jpg', '0130137524', '0623456781', 'Agent5@omnesimmobilier.fr', 'residentiel', 'video5.mp4', 'cv5.jpg', 26.80, 'Password5', 'Garcia', 'Miguel'),
 (6, 'agent6.jpg', '0130137525', '0623456782', 'Agent6@omnesimmobilier.fr', 'residentiel', 'video6.mp4', 'cv6.jpg', 26.80, 'Password6', 'Müller', 'Anna'),
 (7, 'agent7.jpg', '0130137526', '0623456783', 'Agent7@omnesimmobilier.fr', 'residentiel', 'video7.mp4', 'cv7.jpg', 26.80, 'Password7', 'Kim', 'Ji-hoon'),
@@ -214,7 +214,7 @@ CREATE TABLE IF NOT EXISTS `client` (
 --
 
 INSERT INTO `client` (`id`, `nom`, `prenom`, `adresse`, `courriel`, `mot_de_passe`, `infos_financieres`) VALUES
-(1, 'lola', 'legal', '6 Rue Brune\r\n', 'chloe.lestic@gmail.com', '$2y$10$xs7Hr.8Ar1cPEUOSuiJ8fOrIF76SJfXzmei5Alu0A3XQzvxugYJhm', NULL);
+(1, 'lola', 'legal', '1 rue de l''Exemple', 'client.test@example.com', '$2y$10$xs7Hr.8Ar1cPEUOSuiJ8fOrIF76SJfXzmei5Alu0A3XQzvxugYJhm', NULL);
 
 -- --------------------------------------------------------
 
@@ -258,8 +258,8 @@ CREATE TABLE IF NOT EXISTS `consultations` (
 --
 
 INSERT INTO `consultations` (`id`, `courriel_client`, `date`, `heure`, `id_agent`) VALUES
-(4, 'chloe.lestic@gmail.com', '2024-05-14', '10:00:00', 2),
-(7, 'chloe.lestic@gmail.com', '0000-00-00', '10:00:00', 2);
+(4, 'client.test@example.com', '2024-05-14', '10:00:00', 2),
+(7, 'client.test@example.com', '0000-00-00', '10:00:00', 2);
 
 -- --------------------------------------------------------
 
@@ -1281,7 +1281,7 @@ CREATE TABLE IF NOT EXISTS `infos_financieres` (
 --
 
 INSERT INTO `infos_financieres` (`id`, `courriel_client`, `nom_carte`, `prenom_carte`, `adresse_ligne_1`, `adresse_ligne_2`, `ville`, `code_postal`, `pays`, `numero_tel`, `code_cb`, `cvv`) VALUES
-(55, 'chloe.lestic@gmail.com', 'legal ', 'lola', 'rdf', 'ez', 'paris', '78920', 'portugal', '0268758209', '1203', '122');
+(55, 'client.test@example.com', 'legal ', 'lola', 'rdf', 'ez', 'paris', '78920', 'portugal', '0268758209', '1203', '122');
 
 -- --------------------------------------------------------
 
@@ -1309,14 +1309,14 @@ CREATE TABLE IF NOT EXISTS `rdv` (
 --
 
 INSERT INTO `rdv` (`id`, `id_agent`, `courriel_client`, `date`, `heure`, `adresse`, `autres_infos`, `duree`) VALUES
-(14, 10, 'chloe.lestic@gmail.com', '0000-00-00', '14:00:00', NULL, NULL, '01:00:00'),
-(10, 2, 'chloe.lestic@gmail.com', '0000-00-00', '12:00:00', NULL, NULL, '01:00:00'),
-(11, 7, 'chloe.lestic@gmail.com', '0000-00-00', '15:00:00', NULL, NULL, '01:00:00'),
-(12, 7, 'chloe.lestic@gmail.com', '0000-00-00', '15:00:00', NULL, NULL, '01:00:00'),
-(13, 9, 'chloe.lestic@gmail.com', '0000-00-00', '15:00:00', NULL, NULL, '01:00:00'),
-(15, 10, 'chloe.lestic@gmail.com', '0000-00-00', '15:00:00', NULL, NULL, '01:00:00'),
-(16, 2, 'chloe.lestic@gmail.com', '0000-00-00', '17:00:00', NULL, NULL, '01:00:00'),
-(17, 2, 'chloe.lestic@gmail.com', '0000-00-00', '10:00:00', NULL, NULL, '01:00:00');
+(14, 10, 'client.test@example.com', '0000-00-00', '14:00:00', NULL, NULL, '01:00:00'),
+(10, 2, 'client.test@example.com', '0000-00-00', '12:00:00', NULL, NULL, '01:00:00'),
+(11, 7, 'client.test@example.com', '0000-00-00', '15:00:00', NULL, NULL, '01:00:00'),
+(12, 7, 'client.test@example.com', '0000-00-00', '15:00:00', NULL, NULL, '01:00:00'),
+(13, 9, 'client.test@example.com', '0000-00-00', '15:00:00', NULL, NULL, '01:00:00'),
+(15, 10, 'client.test@example.com', '0000-00-00', '15:00:00', NULL, NULL, '01:00:00'),
+(16, 2, 'client.test@example.com', '0000-00-00', '17:00:00', NULL, NULL, '01:00:00'),
+(17, 2, 'client.test@example.com', '0000-00-00', '10:00:00', NULL, NULL, '01:00:00');
 
 -- --------------------------------------------------------
 
